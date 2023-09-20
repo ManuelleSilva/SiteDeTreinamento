@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrícula - Curso de Python</title>
+    
+    <script type="text/javascript">
+        function validar() 
+        {
+                    var n = document.formulario.nome.value;
+                    var e = document.formulario.email.value;
+                    var t = document.formulario.telefone.value;
+                    var p = document.formulario.senha.value;
+                    var cp = document.formulario.confirma_senha.value;
+                    if(n=="")
+                        {
+                            alert('O campo nome está vazio');
+                            document.formulario.pnome.focus();
+                        }
+                    else if(e=="")
+                        {
+                                alert('O campo e-mail está vazio');
+                                document.formulario.email.focus();
+                        }
+                    else if(t=="")
+                        {
+                                alert('O campo telefone está vazio');
+                                document.formulario.fone.focus();
+                        }
+                     else if(p=="")
+                        {
+                                alert('O campo senha está vazio');
+                                document.formulario.senha.focus();
+                        }
+                     else if(cp=="")
+                        {
+                                alert('O campo confirmar senha está vazio');
+                                document.formulario.confirma_senha.focus();
+                        }
+                        else if (p !== cp)
+                            {
+                                alert('Os campos senha e confirmar senha não correspondem');
+                                document.formulario.confirma_senha.focus();
+                            }
+                }
+    </script> 
+
+</head>
+<body>
+    <header>
+        <h1>Matrícula - Curso de Python</h1>
+    </header>
+    <main>
+        <form name="formulario" action="Obrigado2.html" method="post">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required><br>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required><br>
+
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required><br>
+
+            <label for="senha">Senha:</label>
+            <input type="password" id="senha" name="senha" required><br>
+
+            <label for="confirma_senha">Confirmar Senha:</label>
+            <input type="password" id="confirma_senha" name="confirma_senha" required><br>
+
+            <input type="submit" value="Matricular-se">
+            <input type="button" value="Validar campos" onclick="validar()">
+        </form>
+    </main>
+</body>
+</html>
